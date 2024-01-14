@@ -1,0 +1,54 @@
+﻿@page
+@model CR_Proiect.Pages.Tari.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Tara</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Tara.Name" class="control-label"></label>
+                <input asp-for="Tara.Name" class="form-control" />
+                <span asp-validation-for="Tara.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tara.Suprafata" class="control-label"></label>
+                <input asp-for="Tara.Suprafata" class="form-control" />
+                <span asp-validation-for="Tara.Suprafata" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tara.Capitala" class="control-label"></label>
+                <input asp-for="Tara.Capitala" class="form-control" />
+                <span asp-validation-for="Tara.Capitala" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tara.Regiune" class="control-label"></label>
+                <input asp-for="Tara.Regiune" class="form-control" />
+                <span asp-validation-for="Tara.Regiune" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tara.BisericaID" class="control-label">Nume Biserica</label>
+                <select asp-for="Tara.BisericaID" class="form-control" asp-items="ViewBag.BisericaID"></select>
+                <span asp-validation-for="Tara.BisericaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
